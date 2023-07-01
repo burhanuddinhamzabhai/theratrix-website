@@ -3,9 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Theratrix Pharmaceuticals</title>
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png">
       <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://web3forms.com/client/script.js" async defer></script>
+<!--Regular Datatables CSS-->
+<link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+<!--Responsive Extension Datatables CSS-->
+<link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+
+<style>
+  /*Overrides for Tailwind CSS */
+
+  /*Form fields*/
+  .dataTables_wrapper select,
+  .dataTables_wrapper .dataTables_filter input {
+    color: #4a5568;
+    /*text-gray-700*/
+    padding-left: 1rem;
+    /*pl-4*/
+    padding-right: 1rem;
+    /*pl-4*/
+    padding-top: .5rem;
+    /*pl-2*/
+    padding-bottom: .5rem;
+    /*pl-2*/
+    line-height: 1.25;
+    /*leading-tight*/
+    border-width: 2px;
+    /*border-2*/
+    border-radius: .25rem;
+    border-color: #edf2f7;
+    /*border-gray-200*/
+    background-color: #edf2f7;
+    /*bg-gray-200*/
+  }
+
+  /*Row Hover*/
+  table.dataTable.hover tbody tr:hover,
+  table.dataTable.display tbody tr:hover {
+    background-color: #ebf4ff;
+    /*bg-indigo-100*/
+  }
+
+  /*Pagination Buttons*/
+  .dataTables_wrapper .dataTables_paginate .paginate_button {
+    font-weight: 700;
+    /*font-bold*/
+    border-radius: .25rem;
+    /*rounded*/
+    border: 1px solid transparent;
+    /*border border-transparent*/
+  }
+
+  /*Pagination Buttons - Current selected */
+  .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    color: #fff !important;
+    /*text-white*/
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
+    /*shadow*/
+    font-weight: 700;
+    /*font-bold*/
+    border-radius: .25rem;
+    /*rounded*/
+    background: #219ebc !important;
+    /*bg-indigo-500*/
+    border: 1px solid transparent;
+    /*border border-transparent*/
+  }
+
+  /*Pagination Buttons - Hover */
+  .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color: #fff !important;
+    /*text-white*/
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
+    /*shadow*/
+    font-weight: 700;
+    /*font-bold*/
+    border-radius: .25rem;
+    /*rounded*/
+    background: #219ebc !important;
+    /*bg-indigo-500*/
+    border: 1px solid transparent;
+    /*border border-transparent*/
+  }
+
+  /*Add padding to bottom border */
+  table.dataTable.no-footer {
+    border-bottom: 1px solid #e2e8f0;
+    /*border-b-1 border-gray-300*/
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+  }
+
+  /*Change colour of responsive icon*/
+  table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before,
+  table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before {
+    background-color: #219ebc !important;
+    /*bg-indigo-500*/
+  }
+</style>
 
 <style>
   html{
@@ -32,7 +129,7 @@
         <div class="flex lg:flex-1">
           <a href="#" class="-m-1.5 p-1.5">
             <span class="sr-only">Theratrix Pharmaceuticals</span>
-            <img class="h-12 w-auto" src="./assets/logo.png" alt="Theratrix Pharmaceuticals logo">
+            <img class="h-16 w-auto" src="./assets/logo.png" alt="Theratrix Pharmaceuticals logo">
           </a>
         </div>
         <div class="flex lg:hidden">
@@ -46,7 +143,7 @@
         <div class="hidden lg:flex lg:gap-x-12">
           <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Home</a>
           <a href="#about" class="text-sm font-semibold leading-6 text-gray-900">About us</a>
-          <a href="#mission" class="text-sm font-semibold leading-6 text-gray-900">Our Mission</a>
+          <a href="#products" class="text-sm font-semibold leading-6 text-gray-900">Products</a>
           <a href="#contact" class="text-sm font-semibold leading-6 text-gray-900">Contact us</a>
         </div>
         <!-- <div class="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -61,7 +158,7 @@
           <div class="flex items-center justify-between">
             <a href="#" class="-m-1.5 p-1.5">
               <span class="sr-only">Theratrix Pharmaceuticals</span>
-              <img class="h-12 w-auto" src="./assets/logo.png" alt="Theratrix Pharmaceuticals logo">
+              <img class="h-16 w-auto" src="./assets/logo.png" alt="Theratrix Pharmaceuticals logo">
             </a>
             <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="open = false">
               <span class="sr-only">Close menu</span>
@@ -75,7 +172,7 @@
               <div class="space-y-2 py-6">
                 <a @click="open = false" href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Home</a>
                 <a @click="open = false" href="#about" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">About us</a>
-                <a @click="open = false" href="#mission" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Our Mission</a>
+                <a @click="open = false" href="#products" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Products</a>
                 <a @click="open = false" href="#contact" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact us</a>
               </div>
               <!-- <div class="py-6">
@@ -176,6 +273,136 @@
     
   </div>
 
+  <div class="flex flex-col items-center justify-center mt-20" id="products">
+    <h2 class="text-2xl mb-10 font-bold tracking-tight text-gray-900 sm:text-4xl">Our Products</h2>
+
+    <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+      <li class="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow">
+        <div class="flex flex-1 flex-col p-8">
+          <img class="mx-auto h-32" src="./assets/tablet.png" alt="">
+          <h3 class="mt-6 text-xl font-medium text-gray-900">Tablets</h3>
+        </div>
+        <div>
+          <div class="-mt-px flex divide-x divide-gray-200">
+            <div class="flex w-0 flex-1">
+              <button class="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+                  <path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"/></svg>
+                View Products
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow">
+        <div class="flex flex-1 flex-col p-8">
+          <img class="mx-auto h-32" src="./assets/capsule.png" alt="">
+          <h3 class="mt-6 text-xl font-medium text-gray-900">Capsules</h3>
+        </div>
+        <div>
+          <div class="-mt-px flex divide-x divide-gray-200">
+            <div class="flex w-0 flex-1">
+              <button class="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+                  <path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"/></svg>
+                View Products
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow">
+        <div class="flex flex-1 flex-col p-8">
+          <img class="mx-auto h-32" src="./assets/syrup.png" alt="">
+          <h3 class="mt-6 text-xl font-medium text-gray-900">Dry Syrups</h3>
+        </div>
+        <div>
+          <div class="-mt-px flex divide-x divide-gray-200">
+            <div class="flex w-0 flex-1">
+              <button class="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+                  <path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"/></svg>
+                View Products
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow">
+        <div class="flex flex-1 flex-col p-8">
+          <img class="mx-auto h-32" src="./assets/powder.png" alt="">
+          <h3 class="mt-6 text-xl font-medium text-gray-900">Powder</h3>
+        </div>
+        <div>
+          <div class="-mt-px flex divide-x divide-gray-200">
+            <div class="flex w-0 flex-1">
+              <button class="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+                  <path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"/></svg>
+                View Products
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow">
+        <div class="flex flex-1 flex-col p-8">
+          <img class="mx-auto h-32" src="./assets/svp.png" alt="">
+          <h3 class="mt-6 text-xl font-medium text-gray-900">SVP/LVP</h3>
+        </div>
+        <div>
+          <div class="-mt-px flex divide-x divide-gray-200">
+            <div class="flex w-0 flex-1">
+              <button class="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+                  <path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"/></svg>
+                View Products
+              </button>
+            </div>
+          </div>
+        </div>
+      </li>
+      <!-- <li class="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow">
+        <div class="flex flex-1 flex-col p-8">
+          <img class="mx-auto h-32" src="./assets/ayurvedic.png" alt="">
+          <h3 class="mt-6 text-xl font-medium text-gray-900">Ayurvedic</h3>
+        </div>
+        <div>
+          <div class="-mt-px flex divide-x divide-gray-200">
+            <div class="flex w-0 flex-1">
+              <button class="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+                  <path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"/></svg>
+                View Products
+              </button>
+            </div>
+          </div>
+        </div>
+      </li> -->
+    </ul>
+  </div>
+
+
+  
+<!-- <div class="container mt-20 max-w-7xl mx-auto px-2">
+  <div id='recipients' class="p-8 mt-6 lg:mt-0 rounded shadow bg-white">
+    <table id="example" class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
+      <thead>
+        <tr>
+          <th style="text-align: start;" data-priority="1">Tablets</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tiger Nixon</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div> -->
+
+
+
   <!-- <div class="bg-white">
     <div class="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
       <div class="mx-auto max-w-2xl text-center">
@@ -263,7 +490,8 @@
 <footer class="bg-indigo-600">
   <div class="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
     <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
-      <div class="px-5 py-2"><a href="mailto:info@theratrixpharmaceuticals.com?subject=Contacting through website" class="text-base text-white hover:text-white">Contact us</a></div>
+      <div class="px-5 py-2"><a href="tel:+919924721070" class="text-base text-white hover:text-white">+91-99-247-21070</a></div>
+      <div class="px-5 py-2"><a href="mailto:info@theratrixpharmaceuticals.com?subject=Contacting through website" class="text-base text-white hover:text-white">info@theratrixpharmaceuticals.com</a></div>
       <!-- <div class="px-5 py-2"><a href="#" class="text-base text-gray-500 hover:text-gray-900">Press</a></div>
       <div class="px-5 py-2"><a href="#" class="text-base text-gray-500 hover:text-gray-900">Privacy</a></div> -->
     </nav>
@@ -277,6 +505,31 @@
     <p class="mt-8 text-center text-base text-white">© 2023 Theratrix Pharmaceuticals. All rights reserved.</p>
   </div>
 </footer>
+
+
+
+
+
+
+
+<!-- jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<!--Datatables -->
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+<script>
+  $(document).ready(function() {
+
+    var table = $('#example').DataTable({
+        responsive: true
+      })
+      .columns.adjust()
+      .responsive.recalc();
+  });
+</script>
+
+
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
    
 
