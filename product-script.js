@@ -309,19 +309,24 @@ const drySyrupDataset = [
 ];
 
 const powderDataset = [
-    ['Dextrose 17.5mg + Zinc Sulphate 32.5mg + Sucrose 14gm + Ascorbic acid 50mg'],
-    ['Protein Hydrolysate 20% 5 gm + Calcium IP 225 mg + Phosphorous IP 174 mg + Niacinamide IP 15mg + Vitamin A IP 2000 IU + Thiamine HCL IP 1mg + Riboflavine IP 1mg + Cynacobalamine IP 1Mcg + Ascorbic Acid IP 50 Mg + Pantothenate IP 5 Mg + Zinc IP 7.5 Mg + Iron IP 7.5 Mg']
+  [
+    "Dextrose 17.5mg + Zinc Sulphate 32.5mg + Sucrose 14gm + Ascorbic acid 50mg",
+  ],
+  [
+    "Protein Hydrolysate 20% 5 gm + Calcium IP 225 mg + Phosphorous IP 174 mg + Niacinamide IP 15mg + Vitamin A IP 2000 IU + Thiamine HCL IP 1mg + Riboflavine IP 1mg + Cynacobalamine IP 1Mcg + Ascorbic Acid IP 50 Mg + Pantothenate IP 5 Mg + Zinc IP 7.5 Mg + Iron IP 7.5 Mg",
+  ],
 ];
 
-const svpLvpDataset=[
-    ['Normal Saline (NS)'],
-    ['Dextrose Normal Saline'],
-    ['Ringer Lactate (RL)'],
-    ['Dextrose 5% (D5)']
+const svpLvpDataset = [
+  ["Normal Saline (NS)"],
+  ["Dextrose Normal Saline"],
+  ["Ringer Lactate (RL)"],
+  ["Dextrose 5% (D5)"],
 ];
 
 function createTabletsTable() {
   document.getElementById("product-table").style.display = "block";
+  document.getElementById("product-table").scrollIntoView();
   document.getElementById("product-name").innerHTML = "Tablets";
   var table = new $("#example")
     .DataTable({
@@ -335,6 +340,7 @@ function createTabletsTable() {
 
 function createCapsulesTable() {
   document.getElementById("product-table").style.display = "block";
+  document.getElementById("product-table").scrollIntoView();
   document.getElementById("product-name").innerHTML = "Capsules";
   var table = new $("#example")
     .DataTable({
@@ -348,6 +354,7 @@ function createCapsulesTable() {
 
 function createDrySyrupTable() {
   document.getElementById("product-table").style.display = "block";
+  document.getElementById("product-table").scrollIntoView();
   document.getElementById("product-name").innerHTML = "Dry Syrup";
   var table = new $("#example")
     .DataTable({
@@ -360,28 +367,29 @@ function createDrySyrupTable() {
 }
 
 function createPowderTable() {
-    document.getElementById("product-table").style.display = "block";
-    document.getElementById("product-name").innerHTML = "Powder";
-    var table = new $("#example")
-      .DataTable({
-        responsive: true,
-        data: powderDataset,
-        bDestroy: true,
-      })
-      .columns.adjust()
-      .responsive.recalc();
-  }
-  
-  function createSvpLvpTable() {
-    document.getElementById("product-table").style.display = "block";
-    document.getElementById("product-name").innerHTML = "SVP/LVP";
-    var table = new $("#example")
-      .DataTable({
-        responsive: true,
-        data: svpLvpDataset,
-        bDestroy: true,
-      })
-      .columns.adjust()
-      .responsive.recalc();
-  }
-  
+  document.getElementById("product-table").style.display = "block";
+  document.getElementById("product-table").scrollIntoView();
+  document.getElementById("product-name").innerHTML = "Powder";
+  var table = new $("#example")
+    .DataTable({
+      responsive: true,
+      data: powderDataset,
+      bDestroy: true,
+    })
+    .columns.adjust()
+    .responsive.recalc();
+}
+
+function createSvpLvpTable() {
+  document.getElementById("product-table").style.display = "block";
+  document.getElementById("product-table").scrollIntoView();
+  document.getElementById("product-name").innerHTML = "SVP/LVP";
+  var table = new $("#example")
+    .DataTable({
+      responsive: true,
+      data: svpLvpDataset,
+      bDestroy: true,
+    })
+    .columns.adjust()
+    .responsive.recalc();
+}
