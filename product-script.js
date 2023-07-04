@@ -42,7 +42,7 @@ const tabletDataset = [
   ["Ciprofloxacin 250 mg + Tinidazole 300mg"],
   ["Ciprofloxacin 500 mg + Tinidazole 600mg"],
   [
-    "Calcium Carbonate 500mg + Vitamin D3 250 IU + Magnesium 40mg + Manganese 1.8mg + Zinc sulphate 7.5mg + Copper sulphate 1mg"
+    "Calcium Carbonate 500mg + Vitamin D3 250 IU + Magnesium 40mg + Manganese 1.8mg + Zinc sulphate 7.5mg + Copper sulphate 1mg",
   ],
   ["Zinc sulphate 7.5mg + Copper sulphate 1mg"],
   ["Calcium carbonate 500mg + Vitamin D3 250 IU"],
@@ -89,7 +89,7 @@ const tabletDataset = [
   ["Diphenhydramine Hcl 25mg + Ephedrine Hcl 15mg"],
   ["Drotaverine Hydrochloride 80mg + Mefenamic acid 250mg"],
   [
-    "Diethyl Carbamazine Citrate100mg + Guaiphenesin 60mg + Chlorpheniramine maleate 2mg"
+    "Diethyl Carbamazine Citrate100mg + Guaiphenesin 60mg + Chlorpheniramine maleate 2mg",
   ],
   ["Duloxetine 20mg"],
   ["Drotaverine 80 mg"],
@@ -117,9 +117,7 @@ const tabletDataset = [
   ["Furazolidone 100mg"],
   ["Fluconazole 50mg /150 mg / 200 mg / 400 mg"],
   ["Ferrous fumarate 50mg + Folic acid 750mcg + Zinc sulphate 61.8mg"],
-  [
-    "Glibenclamide 5mg"
-  ],
+  ["Glibenclamide 5mg"],
   ["Glimepiride Tablets 1 mg / 2 mg / 3 mg / 4 mg / 6 mg"],
   ["Glipizide Tablets 5 mg"],
   ["Griseofulvin 250mg"],
@@ -156,7 +154,7 @@ const tabletDataset = [
   ["Mefenamic acid 250mg+ Dicyclomine Hcl 10mg"],
   ["Mefenamic acid 250mg + Drotaverine Hydrochloride"],
   [
-    "Methylcobalamin 1500mcg + Folic acid 1.5mg + Vitamin B1 10mg + Vitamin B6 3mg + Alpha lipoic acid 100mg"
+    "Methylcobalamin 1500mcg + Folic acid 1.5mg + Vitamin B1 10mg + Vitamin B6 3mg + Alpha lipoic acid 100mg",
   ],
   ["Mefenamic acid 250 mg + Tranaxemic acid 500mg"],
   ["Moxifloxacin 400 mg T"],
@@ -195,7 +193,7 @@ const tabletDataset = [
   ["Pantoprazole 40 mg + Domperidone 10 mg"],
   ["Pantoprazole 20mg + Domperidone 10mg"],
   [
-    "Paracetamol + Phenylephrine Hydrochloride + Chlorpheniramine Maleate Tablets"
+    "Paracetamol + Phenylephrine Hydrochloride + Chlorpheniramine Maleate Tablets",
   ],
   ["Paracetamol 500mg + Chlorpheniramine Maleate 4mg"],
   ["Paracetamol 125mg / 500 mg / 625 mg"],
@@ -204,7 +202,7 @@ const tabletDataset = [
   ["Paracetamol 250mg + Methocarbamol 350mg"],
   ["Paracetamol 375mg / 500mg + Phenylepehrine Hcl 5mg+ Cetirizine Hcl 5mg"],
   [
-    "Paracetamol 375mg / 500mg + Chlorpheniramine maleate 2mg + Phenylepherine Hcl 5mg"
+    "Paracetamol 375mg / 500mg + Chlorpheniramine maleate 2mg + Phenylepherine Hcl 5mg",
   ],
   ["Paracetamol 200mg + Aspirin 150mg + Caffeine 25mg"],
   ["Paracetamol 500mg + Caffeine 30mg"],
@@ -221,7 +219,7 @@ const tabletDataset = [
   ["Paracetamol 500mg + Caffeine 50mg"],
   ["Paracetamol 250mg + Caffeine 30mg + Salicylamide 150mg"],
   [
-    "Pyrimethamine 25mg + Sulphadoxine 500mg Tablets IP Artesunate Tablets 50mg (For combikit pack only)"
+    "Pyrimethamine 25mg + Sulphadoxine 500mg Tablets IP Artesunate Tablets 50mg (For combikit pack only)",
   ],
   ["Paracetamol 325mg + Tramadol 37.5mg"],
   ["Paracetamol 500 + Tramadol 50mg"],
@@ -243,7 +241,7 @@ const tabletDataset = [
   ["Salbutamol 4mg + Theophylline 200mg"],
   ["Salbutamol 4mg + Theophylline 200mg + Bromhexine 16mg"],
   [
-    "Sildenafil Citrate Tablets 20 mg / 50 mg / 100mg / 120 mg / 150 mg / 200 mg"
+    "Sildenafil Citrate Tablets 20 mg / 50 mg / 100mg / 120 mg / 150 mg / 200 mg",
   ],
   ["Sertraline Tablets 25 mg / 50 mg"],
   ["Sparfloxacin 100mg / 200mg / 400mg"],
@@ -269,8 +267,57 @@ const tabletDataset = [
   ["Voglibose Tablets IP 0.2 mg / 0.3 mg"],
   ["Vitamin C 500mg Tablets"],
   [
-    "Zinc sulphate 61.8mg + Thiamine 10mg + Riboflavine 10mg + Niacinamide 50mg + Pyridoxine 3mg + Cynacobalamine 5mcg + Calcium 12.5mg + Ascorbic acid 150mg"
-  ]
+    "Zinc sulphate 61.8mg + Thiamine 10mg + Riboflavine 10mg + Niacinamide 50mg + Pyridoxine 3mg + Cynacobalamine 5mcg + Calcium 12.5mg + Ascorbic acid 150mg",
+  ],
+];
+
+const capsulesDataset = [
+  ["Acebrophylline Capsules 100 mg"],
+  [
+    "Alpha lipoic acid 100mg + Mecobalamin 1500mcg + Pyridoxine 3mg + Folic acid 1.5mg",
+  ],
+  ["Chloramphenicol Capsules BP 250 mg"],
+  ["Chloramphenicol Capsules IP 250 mg / 500 mg"],
+  ["Doxycycline 100 mg"],
+  ["Esomeprazole 40mg + Domperidone 30mg"],
+  [
+    "Ferrous fumarate 350mg + Cyanocobalamine 15mcg + Ascorbic acid 150mg + Folic acid 1.5mg",
+  ],
+  ["Furazolidone 100mg + Loperamide 2mg"],
+  ["Gabapentin Capsules USP 100 mg / 300 mg"],
+  ["Haemantic Capsules"],
+  ["Itraconazole 100 mg / 200 mg"],
+  ["Lansoprazole 30 mg"],
+  ["Mecobalamin 750mg + Pregabalin 75mg"],
+  ["Omeprazole 20 mg / 40 mg"],
+  ["Omeprazole 20 mg + Domperidone 10 mg"],
+  ["Pantoprazole 40mg + Domperidone 30mg"],
+  ["Rabeprazole 20 mg"],
+  ["Rabeprazole 20 mg + Domperidone 30 mg"],
+  ["Rabeprazole 20mg + Levosulpiride 75mg"],
+  ["Rifampicin 450mg + Isoniazine 300mg"],
+  ["Tetracycline Hydrochloride Capsules 250 mg / 500 mg"],
+  ["Thiocolchicoside Capsules IP 4 mg"],
+  [
+    "Zinc Sulphate 74.93mg + Thiamine 10mg + Riboflavine 10mg + Niacinamide 50mg + Pyridoxine 3mg + Cynacobalamin 15mcg + Calcium pantothenate 12.5mg + Ascorbic acid 150mg",
+  ],
+];
+
+const drySyrupDataset = [
+  ["Erythromycin Estolate 125mg/5ml - Oral Suspension - HDPE / Glass"],
+  ["Azithromycin Dihydrate 125mg/5ml - Oral Suspension - HDPE / Glass"],
+];
+
+const powderDataset = [
+    ['Dextrose 17.5mg + Zinc Sulphate 32.5mg + Sucrose 14gm + Ascorbic acid 50mg'],
+    ['Protein Hydrolysate 20% 5 gm + Calcium IP 225 mg + Phosphorous IP 174 mg + Niacinamide IP 15mg + Vitamin A IP 2000 IU + Thiamine HCL IP 1mg + Riboflavine IP 1mg + Cynacobalamine IP 1Mcg + Ascorbic Acid IP 50 Mg + Pantothenate IP 5 Mg + Zinc IP 7.5 Mg + Iron IP 7.5 Mg']
+];
+
+const svpLvpDataset=[
+    ['Normal Saline (NS)'],
+    ['Dextrose Normal Saline'],
+    ['Ringer Lactate (RL)'],
+    ['Dextrose 5% (D5)']
 ];
 
 function createTabletsTable() {
@@ -285,3 +332,56 @@ function createTabletsTable() {
     .columns.adjust()
     .responsive.recalc();
 }
+
+function createCapsulesTable() {
+  document.getElementById("product-table").style.display = "block";
+  document.getElementById("product-name").innerHTML = "Capsules";
+  var table = new $("#example")
+    .DataTable({
+      responsive: true,
+      data: capsulesDataset,
+      bDestroy: true,
+    })
+    .columns.adjust()
+    .responsive.recalc();
+}
+
+function createDrySyrupTable() {
+  document.getElementById("product-table").style.display = "block";
+  document.getElementById("product-name").innerHTML = "Dry Syrup";
+  var table = new $("#example")
+    .DataTable({
+      responsive: true,
+      data: drySyrupDataset,
+      bDestroy: true,
+    })
+    .columns.adjust()
+    .responsive.recalc();
+}
+
+function createPowderTable() {
+    document.getElementById("product-table").style.display = "block";
+    document.getElementById("product-name").innerHTML = "Powder";
+    var table = new $("#example")
+      .DataTable({
+        responsive: true,
+        data: powderDataset,
+        bDestroy: true,
+      })
+      .columns.adjust()
+      .responsive.recalc();
+  }
+  
+  function createSvpLvpTable() {
+    document.getElementById("product-table").style.display = "block";
+    document.getElementById("product-name").innerHTML = "SVP/LVP";
+    var table = new $("#example")
+      .DataTable({
+        responsive: true,
+        data: svpLvpDataset,
+        bDestroy: true,
+      })
+      .columns.adjust()
+      .responsive.recalc();
+  }
+  
