@@ -299,7 +299,7 @@ const capsulesDataset = [
   ["Tetracycline Hydrochloride Capsules 250 mg / 500 mg"],
   ["Thiocolchicoside Capsules IP 4 mg"],
   [
-    "Zinc Sulphate 74.93mg + Thiamine 10mg + Riboflavine 10mg + Niacinamide 50mg + Pyridoxine 3mg + Cynacobalamin 15mcg + Calcium pantothenate 12.5mg + Ascorbic acid 150mg",
+    "Zinc Sulphate 74.93mg + Thiamine 10mg + Riboflavine 10mg + Niacinamide 50mg + Pyridoxine 3mg + Cynacobalamin 15mcg + Calcium pantothenate 12.5mg + Ascorbic acid 150mg"
   ],
 ];
 
@@ -313,13 +313,13 @@ const powderDataset = [
     "Dextrose 17.5mg + Zinc Sulphate 32.5mg + Sucrose 14gm + Ascorbic acid 50mg",
   ],
   [
-    "Protein Hydrolysate 20% 5 gm + Calcium IP 225 mg + Phosphorous IP 174 mg + Niacinamide IP 15mg + Vitamin A IP 2000 IU + Thiamine HCL IP 1mg + Riboflavine IP 1mg + Cynacobalamine IP 1Mcg + Ascorbic Acid IP 50 Mg + Pantothenate IP 5 Mg + Zinc IP 7.5 Mg + Iron IP 7.5 Mg",
+    "Protein Hydrolysate 20% 5 gm + Calcium IP 225 mg + Phosphorous IP 174 mg + Niacinamide IP 15mg + Vitamin A IP 2000 IU + Thiamine HCL IP 1mg + Riboflavine IP 1mg + Cynacobalamine IP 1Mcg + Ascorbic Acid IP 50 Mg + Pantothenate IP 5 Mg + Zinc IP 7.5 Mg + Iron IP 7.5 Mg"
   ],
 ];
 
 const svpLvpDataset = [
   ["Normal Saline (NS)"],
-  ["Dextrose Normal Saline"],
+  ["Dextrose Normal Saline (DNS)"],
   ["Ringer Lactate (RL)"],
   ["Dextrose 5% (D5)"],
 ];
