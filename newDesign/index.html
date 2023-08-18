@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theratrix Pharmaceuticals</title>
+    <meta name="description" content="Theratrix pharmaceutical website developed by Burhanuddin Mulla Hamzabhai">
+    <link rel="icon" type="image/x-icon" href="../assets/logo.png" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="input.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <!--Responsive Extension Datatables CSS-->
+    <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <header class="absolute inset-x-0 bg-white top-0 z-50" x-data="{ open: false }">
+            <nav class="mx-auto flex max-w-7xl items-center justify-between p-6  lg:p-2" aria-label="Global">
+                <div class="flex lg:flex-1">
+                    <a href="index.html" class="-m-1.5 p-1.5">
+                        <span class="sr-only">Theratrix Pharmaceuticals</span>
+                        <img class="h-16 w-auto" src="../assets/logo.png" alt="Theratrix Pharmaceuticals logo" />
+                    </a>
+                </div>
+                <div class="flex lg:hidden">
+                    <button @click="open = true" type="button"
+                        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                            aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="hidden lg:flex lg:gap-x-12">
+                    <a href="index.html" class="text-sm font-semibold leading-6 text-gray-900">Home</a>
+                    <a href="#about" class="text-sm font-semibold leading-6 text-gray-900">About us</a>
+                    <a href="#products" class="text-sm font-semibold leading-6 text-gray-900">Products</a>
+                    <a href="#contact" class="text-sm font-semibold leading-6 text-gray-900">Contact us</a>
+                    <a href="https://wa.me/+919924721070" class="text-sm font-semibold leading-6 text-gray-900">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32"
+                            viewBox="0 0 56 56">
+                            <path fill="#fff"
+                                d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z">
+                            </path>
+                            <path fill="#fff"
+                                d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z">
+                            </path>
+                            <path fill="#cfd8dc"
+                                d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z">
+                            </path>
+                            <path fill="#40c351"
+                                d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z">
+                            </path>
+                            <path fill="#fff" fill-rule="evenodd"
+                                d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+                <!-- <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+              <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+            </div> -->
+            </nav>
+            <!-- Mobile menu, show/hide based on menu open state. -->
+            <div class="lg:hidden" role="dialog" aria-modal="true" x-show="open">
+                <!-- Background backdrop, show/hide based on slide-over state. -->
+                <div class="fixed inset-0 z-50"></div>
+                <div
+                    class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                    <div class="flex items-center justify-between">
+                        <a href="#" class="-m-1.5 p-1.5">
+                            <span class="sr-only">Theratrix Pharmaceuticals</span>
+                            <img class="h-16 w-auto" src="../assets/logo.png" alt="Theratrix Pharmaceuticals logo" />
+                        </a>
+                        <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="open = false">
+                            <span class="sr-only">Close menu</span>
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="mt-6 flow-root">
+                        <div class="-my-6 divide-y divide-gray-500/10">
+                            <div class="space-y-2 py-6">
+                                <a @click="open = false" href="#"
+                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Home</a>
+                                <a @click="open = false" href="#about"
+                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">About
+                                    us</a>
+                                <a @click="open = false" href="#products"
+                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Products</a>
+                                <a @click="open = false" href="#contact"
+                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact
+                                    us</a>
+                                <a href="https://wa.me/+919924721070"
+                                    class="text-sm font-semibold leading-6 inline-flex text-gray-900">
+                                    Whatsapp &nbsp;
+                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32"
+                                        viewBox="0 0 56 56">
+                                        <path fill="#fff"
+                                            d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z">
+                                        </path>
+                                        <path fill="#fff"
+                                            d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z">
+                                        </path>
+                                        <path fill="#cfd8dc"
+                                            d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z">
+                                        </path>
+                                        <path fill="#40c351"
+                                            d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z">
+                                        </path>
+                                        <path fill="#fff" fill-rule="evenodd"
+                                            d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <!-- <div class="py-6">
+                    <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
+                  </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="relative overflow-hidden">
+            <div class="homeHeroSlider">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+
+
+
+                    <div class="swiper-slide">
+                        <div class="absolute inset-0">
+                            <img class="h-full w-full object-cover" src="../assets/hero-image-1.jpeg" alt="">
+                            <div class="absolute inset-0 bg-gray-600 mix-blend-multiply"></div>
+                        </div>
+                        <div class="mx-auto relative max-w-2xl py-32 sm:py-48 lg:py-56">
+                            <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+                                <div
+                                    class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20">
+                                    Want to know more about our products? <a href="tel:+919924721070"
+                                        class="font-semibold text-white"><span class="absolute inset-0"
+                                            aria-hidden="true"></span>Call
+                                        Us Now<span aria-hidden="true">&rarr;</span></a>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+                                    Theratrix Pharmaceuticals
+                                </h1>
+                                <p class="mt-6 text-lg leading-8 text-gray-300">
+                                    Delivering Excellence Worldwide: We are specialized in providing
+                                    an extensive range of pharmaceutical products.
+                                </p>
+                                <div class="mt-10 flex items-center justify-center gap-x-6">
+                                    <a href="#products"
+                                        class="rounded-md bg-teal-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400">
+                                        Contact us
+                                    </a>
+                                    <a href="#contact" class="text-sm font-semibold leading-6 text-white">Contact
+                                        us<span aria-hidden="true">→</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+                            aria-hidden="true">
+                            <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+                                style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="absolute inset-0">
+                            <img class="h-full w-full object-cover" src="../assets/hero-image-2.jpeg" alt="">
+                            <div class="absolute inset-0 bg-gray-600 mix-blend-multiply"></div>
+                        </div>
+                        <div class="mx-auto relative max-w-2xl py-32 sm:py-48 lg:py-56">
+                            <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+                                <div
+                                    class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20">
+                                    Want to know more about our products? <a href="tel:+919924721070"
+                                        class="font-semibold text-white"><span class="absolute inset-0"
+                                            aria-hidden="true"></span>Call
+                                        Us Now<span aria-hidden="true">&rarr;</span></a>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+                                    Theratrix Pharmaceuticals
+                                </h1>
+                                <p class="mt-6 text-lg leading-8 text-gray-300">
+                                    Delivering Excellence Worldwide: We are specialized in providing
+                                    an extensive range of pharmaceutical products.
+                                </p>
+                                <div class="mt-10 flex items-center justify-center gap-x-6">
+                                    <a href="#products"
+                                        class="rounded-md bg-teal-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400">
+                                        Contact us
+                                    </a>
+                                    <a href="#contact" class="text-sm font-semibold leading-6 text-white">Contact
+                                        us<span aria-hidden="true">→</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+                            aria-hidden="true">
+                            <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+                                style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+
+
+                <!-- navigation buttons -->
+                <!-- <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div> -->
+
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-col items-center justify-center mt-20" id="products">
+        <h2 class="text-2xl mb-10 font-bold tracking-tight text-gray-900 sm:text-4xl">
+            Our Products
+        </h2>
+
+        <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+            <li class="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow">
+                <div class="flex flex-1 flex-col p-8">
+                    <img class="mx-auto h-32" src="../assets/tablet.png" alt="" />
+                    <h3 class="mt-6 text-xl font-medium text-gray-900">Tablets</h3>
+                </div>
+                <div>
+                    <div class="-mt-px flex divide-x divide-gray-200">
+                        <div class="flex w-0 flex-1">
+                            <button onclick="createTabletsTable()"
+                                class="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+                                    <path
+                                        d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z" />
+                                </svg>
+                                View Products
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow">
+                <div class="flex flex-1 flex-col p-8">
+                    <img class="mx-auto h-32" src="../assets/capsule.png" alt="" />
+                    <h3 class="mt-6 text-xl font-medium text-gray-900">Capsules</h3>
+                </div>
+                <div>
+                    <div class="-mt-px flex divide-x divide-gray-200">
+                        <div class="flex w-0 flex-1">
+                            <button onclick="createCapsulesTable()"
+                                class="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+                                    <path
+                                        d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z" />
+                                </svg>
+                                View Products
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow">
+                <div class="flex flex-1 flex-col p-8">
+                    <img class="mx-auto h-32" src="../assets/syrup.png" alt="" />
+                    <h3 class="mt-6 text-xl font-medium text-gray-900">Dry Syrups</h3>
+                </div>
+                <div>
+                    <div class="-mt-px flex divide-x divide-gray-200">
+                        <div class="flex w-0 flex-1">
+                            <button onclick="createDrySyrupTable()"
+                                class="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+                                    <path
+                                        d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z" />
+                                </svg>
+                                View Products
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow">
+                <div class="flex flex-1 flex-col p-8">
+                    <img class="mx-auto h-32" src="../assets/powder.png" alt="" />
+                    <h3 class="mt-6 text-xl font-medium text-gray-900">Powder</h3>
+                </div>
+                <div>
+                    <div class="-mt-px flex divide-x divide-gray-200">
+                        <div class="flex w-0 flex-1">
+                            <button onclick="createPowderTable()"
+                                class="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+                                    <path
+                                        d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z" />
+                                </svg>
+                                View Products
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow">
+                <div class="flex flex-1 flex-col p-8">
+                    <img class="mx-auto h-32" src="../assets/svp.png" alt="" />
+                    <h3 class="mt-6 text-xl font-medium text-gray-900">SVP/LVP</h3>
+                </div>
+                <div>
+                    <div class="-mt-px flex divide-x divide-gray-200">
+                        <div class="flex w-0 flex-1">
+                            <button onclick="createSvpLvpTable()"
+                                class="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+                                    <path
+                                        d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z" />
+                                </svg>
+                                View Products
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="container mt-20 max-w-7xl mx-auto px-2" id="product-table" style="display: none">
+        <div id="recipients" class="p-8 mt-6 lg:mt-0 rounded shadow bg-white">
+            <table id="example" class="stripe hover" style="width: 100%; padding-top: 1em; padding-bottom: 1em">
+                <thead>
+                    <tr>
+                        <th id="product-name" style="text-align: start" data-priority="1"></th>
+                    </tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <section class="text-gray-600 body-font" id="about">
+        <div class="container mx-auto flex px-5 pt-14 md:flex-row flex-col items-center">
+            <div
+                class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900"> About us
+                </h1>
+                <p class="mb-2 leading-relaxed">
+                    Delivering Excellence Worldwide: We are specialized in providing
+                    an extensive range of pharmaceutical products, including Tablets,
+                    Capsule, Dry Syrups, Powders, Small Volume Parenterals, Large
+                    Volume Parenterals, Nutraceuticals, and APIs.
+                </p>
+                <p class="mb-8 leading-relaxed">
+                    Theratrix Pharmaceuticals is dedicated to transforming healthcare
+                    through pioneering research and development, delivering
+                    high-quality pharmaceutical products. We envision a future where
+                    our innovative product portfolio enhances lives and makes a
+                    lasting impact on global well-being.
+                </p>
+                <div class="flex justify-center">
+                    <a  href="#products"
+                        class="inline-flex text-white bg-teal-600 border-0 py-2 px-6 focus:outline-none hover:bg-teal-500 rounded text-lg cursor-pointer">Products</a>
+                    <a  href="#contact"
+                        class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg cursor-pointer">Contact us</a>
+                </div>
+            </div>
+            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+                <img class="object-cover object-center rounded" alt="hero" src="../assets/aboutus-image.jpeg">
+            </div>
+        </div>
+    </section>
+
+    <section class="text-gray-600 body-font">
+        <div class="container mx-auto flex px-5 py-14 md:flex-row flex-col items-center">
+            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+                <img class="object-cover object-center rounded" alt="hero" src="../assets/ourmission-image.jpeg">
+            </div>
+            <div
+                class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Our Mission
+                </h1>
+                <p class="mb-8 leading-relaxed">
+                    At Theratrix Pharmaceuticals, our mission is to empower
+                    individuals on their healing journey. We develop and deliver
+                    innovative pharmaceutical solutions that make a real difference in
+                    people's lives. By connecting healthcare providers and patients
+                    through a comprehensive network, we ensure access to
+                    transformative therapies for all. Through collaboration, research,
+                    and patient-centric care, we aim to improve the quality of life
+                    and make a lasting impact globally. With unwavering commitment to
+                    advancements and the power of science, we lead as a guiding force,
+                    dedicated to empowering individuals and creating a healthier world
+                    for everyone.
+                </p>
+                <div class="flex justify-center">
+                    <a  href="#products"
+                        class="inline-flex text-white bg-teal-600 border-0 py-2 px-6 focus:outline-none hover:bg-teal-500 rounded text-lg cursor-pointer">Products</a>
+                    <a  href="#contact"
+                        class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg cursor-pointer">Contact us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 swiper logoSlider">
+        <p class="text-3xl font-bold tracking-tight text-gray-900 text-center mb-10">Our Global Presence</p>
+        <div class="mt-6 lg:mt-8 swiper-wrapper">
+
+            <div class="flex justify-center p-0 lg:p-6  swiper-slide">
+                <img class="w-full aspect-square md:aspect-[4/3] md:w-3/4" src="../assets/flags/Zimbabwe.gif" alt="">
+            </div>
+
+            <div class="flex justify-center p-0 lg:p-6  swiper-slide">
+                <img class="w-full aspect-square md:aspect-[4/3] md:w-3/4" src="../assets/flags/Cambodia.gif" alt="">
+            </div>
+            <div class="flex justify-center p-0 lg:p-6  swiper-slide">
+                <img class="w-full aspect-square md:aspect-[4/3] md:w-3/4" src="../assets/flags/Congo.gif" alt="">
+            </div>
+            <div class="flex justify-center p-0 lg:p-6  swiper-slide">
+                <img class="w-full aspect-square md:aspect-[4/3] md:w-3/4" src="../assets/flags/Gambia.gif" alt="">
+            </div>
+            <div class="flex justify-center p-0 lg:p-6  swiper-slide">
+                <img class="w-full aspect-square md:aspect-[4/3] md:w-3/4" src="../assets/flags/Namibia.gif" alt="">
+            </div>
+            <div class="flex justify-center p-0 lg:p-6  swiper-slide">
+                <img class="w-full aspect-square md:aspect-[4/3] md:w-3/4" src="../assets/flags/PapuaNewGuinea.gif"
+                    alt="">
+            </div>
+
+            <div class="flex justify-center p-0 lg:p-6  swiper-slide">
+                <img class="w-full aspect-square md:aspect-[4/3] md:w-3/4" src="../assets/flags/SouthAfrica.gif" alt="">
+            </div>
+            <div class="flex justify-center p-0 lg:p-6  swiper-slide">
+                <img class="w-full aspect-square md:aspect-[4/3] md:w-3/4" src="../assets/flags/TrinidadAndTobago.gif"
+                    alt="">
+            </div>
+
+            <div class="flex justify-center p-0 lg:p-6  swiper-slide">
+                <img class="w-full aspect-square md:aspect-[4/3] md:w-3/4" src="../assets/flags/Zimbabwe.gif" alt="">
+            </div>
+
+            <div class="flex justify-center p-0 lg:p-6  swiper-slide">
+                <img class="w-full aspect-square md:aspect-[4/3] md:w-3/4" src="../assets/flags/Cambodia.gif" alt="">
+            </div>
+            <div class="flex justify-center p-0 lg:p-6  swiper-slide">
+                <img class="w-full aspect-square md:aspect-[4/3] md:w-3/4" src="../assets/flags/Congo.gif" alt="">
+            </div>
+            <div class="flex justify-center p-0 lg:p-6  swiper-slide">
+                <img class="w-full aspect-square md:aspect-[4/3] md:w-3/4" src="../assets/flags/Gambia.gif" alt="">
+            </div>
+            <div class="flex justify-center p-0 lg:p-6  swiper-slide">
+                <img class="w-full aspect-square md:aspect-[4/3] md:w-3/4" src="../assets/flags/Namibia.gif" alt="">
+            </div>
+            <div class="flex justify-center p-0 lg:p-6  swiper-slide">
+                <img class="w-full aspect-square md:aspect-[4/3] md:w-3/4" src="../assets/flags/PapuaNewGuinea.gif"
+                    alt="">
+            </div>
+
+            <div class="flex justify-center p-0 lg:p-6  swiper-slide">
+                <img class="w-full aspect-square md:aspect-[4/3] md:w-3/4" src="../assets/flags/SouthAfrica.gif" alt="">
+            </div>
+            <div class="flex justify-center p-0 lg:p-6  swiper-slide">
+                <img class="w-full aspect-square md:aspect-[4/3] md:w-3/4" src="../assets/flags/TrinidadAndTobago.gif"
+                    alt="">
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="isolate bg-teal-600 mt-10 px-6 py-8 sm:py-16 lg:px-8" id="contact">
+        <div class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
+            aria-hidden="true">
+            <div class="relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#219ebc] to-[#a2d2ff] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]"
+                style="
+              clip-path: polygon(
+                74.1% 44.1%,
+                100% 61.6%,
+                97.5% 26.9%,
+                85.5% 0.1%,
+                80.7% 2%,
+                72.5% 32.5%,
+                60.2% 62.4%,
+                52.4% 68.1%,
+                47.5% 58.3%,
+                45.2% 34.5%,
+                27.5% 76.7%,
+                0.1% 64.9%,
+                17.9% 100%,
+                27.6% 76.8%,
+                76.1% 97.7%,
+                74.1% 44.1%
+              );
+            "></div>
+        </div>
+        <div class="mx-auto max-w-2xl text-center">
+            <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                Contact sales
+            </h2>
+        </div>
+        <form action="https://api.web3forms.com/submit" method="POST" class="mx-auto mt-4 max-w-xl sm:mt-8">
+            <input type="hidden" name="access_key" value="6b53f570-78ac-4563-ab81-fbff8267460a" />
+            <input type="hidden" name="subject" value="New Contact Form" />
+            <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                <div>
+                    <label for="first-name" class="block text-sm font-semibold leading-6 text-white">First name</label>
+                    <div class="mt-2.5">
+                        <input type="text" name="first-name" id="first-name" autocomplete="given-name"
+                            class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6" />
+                    </div>
+                </div>
+                <div>
+                    <label for="last-name" class="block text-sm font-semibold leading-6 text-white">Last name</label>
+                    <div class="mt-2.5">
+                        <input type="text" name="last-name" id="last-name" autocomplete="family-name"
+                            class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6" />
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="company" class="block text-sm font-semibold leading-6 text-white">Company</label>
+                    <div class="mt-2.5">
+                        <input type="text" name="company" id="company" autocomplete="organization"
+                            class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6" />
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="email" class="block text-sm font-semibold leading-6 text-white">Email</label>
+                    <div class="mt-2.5">
+                        <input type="email" name="email" id="email" autocomplete="email"
+                            class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6" />
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="phone-number" class="block text-sm font-semibold leading-6 text-white">Phone
+                        number</label>
+                    <div class="relative mt-2.5">
+                        <input type="tel" name="phone-number" id="phone-number" autocomplete="tel"
+                            class="block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6" />
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="message" class="block text-sm font-semibold leading-6 text-white">Message</label>
+                    <div class="mt-2.5">
+                        <textarea name="message" id="message" rows="4"
+                            class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-600 sm:text-sm sm:leading-6"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-10">
+                <button type="submit"
+                    class="block w-full rounded-md bg-white px-3.5 py-2.5 text-center text-sm font-semibold text-teal-600 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600">
+                    Let's talk
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <footer class="bg-teal-600">
+        <div class="mx-auto max-w-7xl overflow-hidden py-4 px-4 sm:px-6 lg:px-8">
+            <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
+                <div class="px-5 py-2">
+                    <a href="tel:+919924721070" class="text-base text-white hover:text-white">+91-99-247-21070</a>
+                </div>
+                <div class="px-5 py-2">
+                    <a href="mailto:info@theratrixpharmaceuticals.com?subject=Contacting through website"
+                        class="text-base text-white hover:text-white">info@theratrixpharmaceuticals.com</a>
+                </div>
+            </nav>
+            <p class="mt-8 text-center text-base text-white">
+                © 2023 Theratrix Pharmaceuticals. All rights reserved.
+            </p>
+            <p class="mt-8 text-center text-xs text-white">Developed by <a class="font-semibold"
+                    href="https://burhanuddinhamzabhai.dev/">Burhanuddin Mulla Hamzabhai</a></p>
+
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!--Datatables -->
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script src="../product-script.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+        const homeHeroSlider = new Swiper(".homeHeroSlider", {
+            slidesPerView: 1,
+            loop: true,
+            speed: 3000,
+            parallax: true,
+            autoplay: {
+                delay: 3000,
+            },
+            grid: {
+                rows: 1,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+
+        var swiper = new Swiper(".logoSlider", {
+            slidesPerView: 5,
+
+            loop: true,
+            speed: 3000,
+            parallax: true,
+            autoplay: {
+                delay: 0,
+            },
+            grid: {
+                rows: 1,
+            },
+            spaceBetween: 10,
+        });
+
+    </script>
+
+</body>
+
+
+
+</html>

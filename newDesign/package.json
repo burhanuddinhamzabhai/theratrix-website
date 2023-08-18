@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "start-tailwind": "npx tailwindcss -i input.css -o output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  },
+  "dependencies": {
+    "swiper": "^10.2.0"
+  }
+}
